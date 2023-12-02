@@ -2,10 +2,9 @@
 
 from tqdm import tqdm
 import requests
-from bs4 import BeautifulSoup
+import tarfile
 import os
 import re
-import tarfile
 
 #################################################################################################
 ###	User Settings Section:								      ###
