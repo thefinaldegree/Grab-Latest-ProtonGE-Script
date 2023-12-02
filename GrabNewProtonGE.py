@@ -78,7 +78,7 @@ if latest_release_link:
             	progress_bar.close()
             	print("Download Complete!\r\n")
             	print("Extracting Release")
-            	print("[	" + directory_path + "/" + latest_release_link["tag_name"] + "	]")
+            	print("[ " + directory_path + "/" + latest_release_link["tag_name"] + " ]")
             	
             	# open file
             	with tarfile.open(directory_path + "/" + asset["name"]) as tar:
