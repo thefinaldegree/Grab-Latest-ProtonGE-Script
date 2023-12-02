@@ -76,19 +76,20 @@ if latest_release_link:
             	            progress_bar.update(len(data))
             	            f.write(data)
             	progress_bar.close()
-            	print("\r\nDownload Complete! Saved to: " + directory_path + "/" + asset["name"])
-            	print("Starting extraction to:" + latest_release_link["tag_name"] + "..	", end="")
+            	print("Download Complete!\r\n")
+            	print("Extracting Release")
+            	print("[" + directory_path + "/" + latest_release_link["tag_name"] + "]")
             	
-            	# open file 
-            	archive = tarfile.open(directory_path + "/" + asset["name"])
-            	# extract files 
-            	archive.extractall(directory_path)
-            	# close file 
-            	archive.close()
+            	# open file
+            	with tarfile.open(directory_path + "/" + asset["name"]) as tar:
+            	   for member in tqdm(iterable=tar.getmembers(), total=len(tar.getmembers()), unit='iB', unit_scale=True, ncols=len(asset["browser_download_url"])+4, desc=asset["name"]):
+            	       tar.extract(path=directory_path, member=member)
+                # Tidy up a bit
+            	os.remove(directory_path + "/" + asset["name"])
             	
-            	print("..success! Please restart Steam to see new version")
+            	print("Extraction Complete!\r\n")
+            	print("Please restart Steam to see new version")
     else:
         print("No newer releases found.")
 else:
     print("Unable to retrieve the latest release link.")
-
