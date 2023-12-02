@@ -19,6 +19,8 @@ Just a simple script for downloading and extracting the latest ProtonGE release 
 
 2. Now that we're in crontab, scroll to the bottom of the file and after any existing entries, include the following line:
 
+      This will run the script at midnight every Monday:
+
       `0 0 * * 1 python3 /home/<USER>/scripts/GrabNewProtonGE.py`
    
       Note: To get your username, run the following in the terminal: `echo "$USER"`
