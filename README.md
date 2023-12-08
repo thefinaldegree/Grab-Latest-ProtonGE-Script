@@ -45,7 +45,7 @@ GE-Proton8-25.tar.gz: 100%|█████████████████�
 Download Complete!
 
 Extracting Release
-[ /home/tristan/.steam/compatibilitytools.d/GE-Proton8-25 ]
+[ /home/$USER/.steam/compatibilitytools.d/GE-Proton8-25 ]
 GE-Proton8-25.tar.gz: 100%|███████████████████████████████████████████| 7.95k/7.95k [00:05<00:00, 1.38kiB/s]
 Extraction Complete!
 
